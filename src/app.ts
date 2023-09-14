@@ -6,5 +6,6 @@ const app = express();
 app.use(express.json());
 
 app.post('/products', products.createNewProduct);
+app.get('/products', products.getAll);
 
 export default app;

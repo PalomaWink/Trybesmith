@@ -6,6 +6,12 @@ const createNewProduct = async (req: Request, res: Response): Promise<Response> 
   return res.status(201).json({ id, name, price });
 };
 
+const getAll = async (_req: Request, res: Response): Promise<Response> => {
+  const result = await newProduct.getAllProducts();
+  return res.status(200).json(result);
+};
+
 export default {
   createNewProduct,
+  getAll,
 };
