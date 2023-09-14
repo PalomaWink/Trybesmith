@@ -27,6 +27,7 @@ describe('ProductsController', function () {
   it('Verifica se retorna o objeto corretamente ao cadastrar um produto', async function() {
     sinon.stub(createProduct, 'createProduct').resolves(product.newProduct);
 
-    await newProduct.createNewProduct()
+    await newProduct.createNewProduct(req, res)
+    expect(res.status).to.have.been.calledWith(201);
   })
 });
