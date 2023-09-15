@@ -1,5 +1,5 @@
 import sinon from 'sinon';
-import chai, { expect } from 'chai';
+import chai from 'chai';
 import chaiHttp from 'chai-http';
 /* import OrderModel from '../../../src/database/models/order.model';
 import order from '../../mocks/order.mock';
