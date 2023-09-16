@@ -5,3 +5,9 @@ export type User = {
   level: number;
   password: string;
 };
+
+export type LoginResponse = {
+  status: number, data: { token: string } 
+} | {
+  status: number, data: { message: string }
+};

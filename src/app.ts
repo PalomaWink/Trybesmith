@@ -10,4 +10,6 @@ app.post('/products', products.createNewProduct);
 app.get('/products', products.getAll);
 
 app.get('/orders', orders.allOrders);
+
+app.post('/login');
 export default app;
