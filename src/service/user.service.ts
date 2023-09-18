@@ -1,11 +1,16 @@
 import * as jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 import UserModel from '../database/models/user.model';
 import { LoginResponse } from '../types/User';
 
-const login = async (username: string, password: string): Promise<LoginResponse> => {
-  const user = await UserModel.findOne({ where: { username } });
-  if (user.dataValues.username !== username || user.dataValues.password !== password) {
-    return { status: 400, data: { message: 'Username or password invalid' } };
+const login = async (username: string, senha: string): Promise<LoginResponse> => {
+  const user = await UserModel.findOne({ where: { username } }); 
+  if (!user) {
+    return { status: 401, data: { message: 'Username or password invalid' } };
+  }
+  const isValid = await bcrypt.compare(senha, user.dataValues.password);
+  if (!isValid) {
+    return { status: 401, data: { message: 'Username or password invalid' } };
   }
   const token = jwt.sign({
     id: user.dataValues.id,

@@ -5,8 +5,6 @@ import { User } from '../../types/User';
 type UserInputtableTypes = Optional<User, 'id'>;
 type UserSequelizeModelCreator = ModelDefined<User, UserInputtableTypes>;
 export type UserSequelizeModel = Model<User, UserInputtableTypes>;
-export type UserService = { status: number, date: { message: 'string' } } |
-{ status: number, date: User };
 
 const UserModel: UserSequelizeModelCreator = db.define('User', {
   id: {

@@ -7,7 +7,9 @@ export type User = {
 };
 
 export type LoginResponse = {
-  status: number, data: { token: string } 
-} | {
-  status: number, data: { message: string }
+  status: number;
+  data: {
+    token?: string;
+    message?: string;
+  };
 };
