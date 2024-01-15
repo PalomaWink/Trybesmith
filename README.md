@@ -1,4 +1,4 @@
-# Nome do Projeto
+# TrybeSmith
 
 Neste projeto foi desenvolvido uma loja de itens medievais, no formato de uma API, utilizando Typescript e Sequelize. Foram desenvolvidas as camadas de Service e Controllers da aplicação, utilizando JWT para autenticar algumas rotas, além dos testes que garantiram o funcionamento delas. A aplicação tem endpoints que dão suporte a operações de criação, leitura e atualização de informações.
 
